@@ -1,0 +1,23 @@
+Instalar GIT en su sistema
+ - https://git-scm.com/download/win
+Configurar GIT
+ ejecutar dos comandos para indicar el username y el correo
+ > git config --global user.name "FIRST_NAME LAST_NAME"
+ > git config --global user.email "MY_NAME@example.com"
+-------------------------------------------
+Crear una cuenta en: (GITHUB, BITBUCKET, GITLAB)
+-------------------------------------------
+
+Si existe el respositorio GIT (CLONAR)
+    > git clone direccion_repositorio
+Si NO existe el respositorio GIT (INICIAR)
+    > git init
+
+--------------------------------------------
+Relacionar su repositorio Local con Remoto
+    - crear una cuenta en : (GITHUB)
+    - crear un nuevo repositorio remoto
+    > git remote add origin https://github.com/cchura94/proyectoLaravel9.git
+----------------------------------
+Subir desde local al remoto
+    > git add .
