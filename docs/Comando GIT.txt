@@ -21,3 +21,5 @@ Relacionar su repositorio Local con Remoto
 ----------------------------------
 Subir desde local al remoto
     > git add .
+    > git commit -m "proyecto base"
+    > git push origin master

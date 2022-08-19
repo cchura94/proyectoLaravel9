@@ -1,0 +1,21 @@
+Migrar
+    > php artisan migrate
+
+----------------- CRUD USUARIO ---------------------
+Generar un Controlador
+    > php artisan make:controller UsuarioController -r
+
+Agregar las rutas para el Controlador  de recursos (routes/web.php)
+    
+    use App\Http\Controllers\UsuarioController;
+
+    Route::resource("usuario", UsuarioController::class)
+
+Crear las vistas blade (HTML) manualmente (resources/views/admin/usuario/)
+    - resources/views/admin/usuario/listar.blade.php
+    - resources/views/admin/usuario/nuevo.blade.php
+    - resources/views/admin/usuario/mostrar.blade.php
+    - resources/views/admin/usuario/editar.blade.php
+
+Asignar la logica en el Controller (App/Http/Controllers/)
+
