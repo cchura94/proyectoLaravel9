@@ -19,3 +19,6 @@ Crear las vistas blade (HTML) manualmente (resources/views/admin/usuario/)
 
 Asignar la logica en el Controller (App/Http/Controllers/)
 
+-----------------------------------
+Lista las rutas del proyecto
+> php artisan route:list
