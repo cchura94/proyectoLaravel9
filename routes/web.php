@@ -10,8 +10,15 @@ Route::get('/', function () {
 });
 
 
-Route::resource("usuario", UsuarioController::class);
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
 
+    Route::resource("usuario", UsuarioController::class);
+
+});
 /*
     [GET      /usuario          -  UsuarioController   index]   usuario.index
     [GET      /usuario/create   -  UsuarioController   create]  usuario.create
@@ -22,3 +29,15 @@ Route::resource("usuario", UsuarioController::class);
     [DELETE   /usuario/{id}     -  UsuarioController   destroy] usuario.destroy
 
 */
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+
+});
