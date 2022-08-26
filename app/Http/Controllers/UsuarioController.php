@@ -14,7 +14,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuarios = User::get();
+        $usuarios = User::paginate(5);
         return view("admin.usuario.listar", compact("usuarios"));
     }
 
@@ -49,7 +49,7 @@ class UsuarioController extends Controller
         $usuario->password = bcrypt($request->password);
         $usuario->save(); // create_at, updated_at
         // responder
-        return redirect("/usuario");
+        return redirect("/admin/usuario");
     }
 
     /**
@@ -97,7 +97,7 @@ class UsuarioController extends Controller
         $usuario->password = bcrypt($request->password);
         $usuario->update(); // updated_at
         // responder
-        return redirect("/usuario");
+        return redirect("/admin/usuario");
     }
 
     /**
@@ -111,6 +111,6 @@ class UsuarioController extends Controller
         $usuario = User::FindOrFail($id);
         $usuario->delete();
 
-        return redirect("/usuario");
+        return redirect("/admin/usuario");
     }
 }

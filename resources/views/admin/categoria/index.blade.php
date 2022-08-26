@@ -127,8 +127,7 @@
                             </div>
                         </div>
 
-
-
+                        <a href="{{ route('categoria.show', $cat->id) }}" class="btn btn-info btn-xs">mostrar Producto</a>
 
 
                     </td>
@@ -141,3 +140,4 @@
 </div>
 
 @endsection
+

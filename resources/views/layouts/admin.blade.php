@@ -15,6 +15,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{asset('/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('/dist/css/adminlte.min.css')}}">
+
+  @yield("css")
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -244,6 +246,36 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <li class="nav-item">
             <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Gestión Productos
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('categoria.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Categorias</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('producto.create') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Nuevo Producto</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('producto.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lista Producto</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Simple Link
@@ -323,5 +355,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('/dist/js/adminlte.min.js')}}"></script>
+
+@yield("js")
+
 </body>
 </html>

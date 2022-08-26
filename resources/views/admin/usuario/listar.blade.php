@@ -38,6 +38,8 @@
 
         </table>
 
+        {{ $usuarios->links() }}
+
     </div>
 </div>
 
