@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Categoria;
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ProductoController extends Controller
 {
@@ -107,5 +108,13 @@ class ProductoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function reporte_lista_productos()
+    {
+        $productos = Producto::all();
+        $pdf = Pdf::loadView('admin.producto.reportepdf', ["data" => $productos]);
+        return $pdf->stream('lista_productos.pdf');
+        
     }
 }

@@ -21,6 +21,9 @@ Route::prefix("admin")->middleware([
     'verified'
 ])->group(function () {
 
+    Route::get('reporte_lista_productos', [ProductoController::class, "reporte_lista_productos"])->name("reporte_lista_productos");
+    Route::get('pedido/pdf_pedido/{id}', [PedidoController::class, "pdf_pedido"])->name("pdf_pedido");
+    
     Route::resource("usuario", UsuarioController::class);
     Route::resource("categoria", CategoriaController::class);
     Route::resource("producto", ProductoController::class);

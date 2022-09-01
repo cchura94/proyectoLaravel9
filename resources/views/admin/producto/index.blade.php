@@ -6,6 +6,7 @@
 
 <div class="card">
     <div class="card-body">
+        <a href="{{route('reporte_lista_productos')}}" target="_blank" class="btn btn-primary">REPORTE PDF</a>
 
         @include("admin.producto.nuevo")
     </div>
@@ -69,6 +70,9 @@
 
     </div>
 </div>
+
+
+<livewire:producto />
 
 
 @endsection

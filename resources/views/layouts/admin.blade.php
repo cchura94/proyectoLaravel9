@@ -17,6 +17,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{asset('/dist/css/adminlte.min.css')}}">
 
   @yield("css")
+  @livewireStyles
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -381,6 +382,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('/dist/js/adminlte.min.js')}}"></script>
 
 @yield("js")
-
+@livewireScripts
 </body>
 </html>

@@ -6,6 +6,7 @@ use App\Models\Pedido;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PedidoController extends Controller
 {
@@ -16,7 +17,8 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        //
+        $pedidos = Pedido::paginate(10);
+        return view("admin.pedido.index", compact('pedidos'));
     }
 
     /**
@@ -111,5 +113,12 @@ class PedidoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function pdf_pedido($id)
+    {
+        $pedido = Pedido::find($id);
+        $pdf = Pdf::loadView('admin.pedido.reportepdf', ["data" => $pedido]);
+        return $pdf->stream('detalle_pedido.pdf');
     }
 }
